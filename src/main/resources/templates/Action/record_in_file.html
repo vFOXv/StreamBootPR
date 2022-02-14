@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Запись текста в файл</title>
+</head>
+<body>
+<strong>Запись текста в файл (с русским текстом тоже работает)</strong>
+<br>
+<hr>
+<form th:action="@{/action/recordInFile}" th:object="${newNote}" method="post">
+
+    <br>
+    <p>Введите текст на английском или русском языке.</p>
+    <p>Файл расположен в папке resources/RecordFile/Hello_My_Text.txt</p>
+
+    <textarea type="text" th:field="*{text}"  cols="100" rows="5"></textarea>
+    <br>
+    <input type="submit" value="Добавить текст"/>
+    <input type="reset" value="Очистить"/>
+
+
+</form>
+
+<br>
+<hr>
+<br>
+<a href="/">Возврат в меню приложения.</a>
+</body>
+</html>

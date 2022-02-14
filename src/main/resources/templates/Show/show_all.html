@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:background="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Список всех записей из DB</title>
+</head>
+<body>
+<strong>Список всех записей в DB</strong>
+<hr>
+<br>
+<table border="1">
+    <tr style ="background: gray">
+        <td>id</td>
+        <td>Date</td>
+        <td>Name</td>
+        <td>Text</td>
+        <td>Delete</td>
+    </tr>
+    <tr th:each="note:${AllNotes}">
+        <td th:text="${note.id}"></td>
+        <!--changeThisDateInString метод в Note - меняет формат выдачи даты(отсекает часы и мунуты) -->
+        <td th:text="${note.changeThisDateInString}"></td>
+        <td th:text="${note.name}"></td>
+        <td th:text="${note.text}"></td>
+        <td><a th:href="@{/action/removeNote/{id}(id=${note.getId()})}" th:text="${DeleteThisNote}"></a></td>
+        </tr>
+</table>
+<br>
+<hr>
+<br>
+<a href="/">Возврат в меню приложения.</a>
+</body>
+</html>
