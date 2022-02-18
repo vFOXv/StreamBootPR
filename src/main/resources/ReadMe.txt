@@ -1,6 +1,8 @@
 Используемые технологиии:
 Java, Spring Boot, Thymeleaf, HTML, JPA, Validation, Stream.
 
+Запуск приложения: в поискокой строке ввести localhost:8080
+
 Приложение демонстрирует работу с потоками ввода ввывода(FileReader, FileWriter)
 и работу с базой данных через JPA.
 
